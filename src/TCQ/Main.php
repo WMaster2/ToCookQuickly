@@ -80,7 +80,7 @@ public function onTap(PlayerInteractEvent $event){
 }
 public function lang($phrase){
 		$lang = $this->getConfig()->get("Use_language");
-        $urlh = $this->curl_get_contents("https://raw.githubusercontent.com/PMpluginMaker-Team/ToCookQuickly/lang/lang/{$lang}.json"); 
+        $urlh = $this->curl_get_contents("https://raw.githubusercontent.com/PMpluginMaker-Team/ToCookQuickly/master/lang/{$lang}.json"); 
         $url = json_decode($urlh, true); 
         return $url["{$phrase}"];
 		}
