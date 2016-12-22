@@ -20,16 +20,7 @@ public function onEnable(){
 		$this->reloadConfig();
 		$this->l = $this->getConfig()->get("Use_language");
 		$this->b = $this->getConfig()->get("Cooking_block");
-		if($this->l == "jpn"){
-			$this->getLogger()->info("§bToCookQuicklyプラグインをご利用いただき、ありがとうございます。");
-			$this->getLogger()->info("§b不具合などが生じた際は、連絡をお願いします。");
-			$this->getLogger()->info("§c 二次配布、改造配布は禁止です。 §6製作者gigantessbeta(みやりん)");
-		}else{
-			$this->getLogger()->info("§bThank you for using ToCookQuickly plugin");
-			$this->getLogger()->info("§bPlease contact us when troubles occur.");
-			$this->getLogger()->info("§c Secondary distribution, Modification Distribution is prohibited. §6 Author:gigantessbeta(みやりん)");
-}
-
+		$this->lang("start");
 	
 }
 
@@ -44,76 +35,53 @@ public function onTap(PlayerInteractEvent $event){
 			case "319":
 				$player->getInventory()->addItem(Item::get(320, 0, 1));
 				$player->getInventory()->removeItem(Item::get(319, 0, 1));
-				if($this->l == "jpn"){
-					$player->sendMessage("[§eTCQ§f] §6高速調理を行いました!");
-				}else{
-					$player->sendMessage("[§eTCQ§f] §6Did high-speed cooking!");
-				}
+				$this->lang("did");
 				break;
 
 			case "363":
 				$player->getInventory()->addItem(Item::get(364, 0, 1));
 				$player->getInventory()->removeItem(Item::get(363, 0, 1));
-				if($this->l == "jpn"){
-					$player->sendMessage("[§eTCQ§f] §6高速調理を行いました!");
-				}else{
-					$player->sendMessage("[§eTCQ§f] §6Did high-speed cooking!");
-				}
+				$this->lang("did");
 				break;
 
 			case "365":
 				$player->getInventory()->addItem(Item::get(366, 0, 1));
 				$player->getInventory()->removeItem(Item::get(365, 0, 1));
-				if($this->l == "jpn"){
-					$player->sendMessage("[§eTCQ§f] §6高速調理を行いました!");
-				}else{
-					$player->sendMessage("[§eTCQ§f] §6Did high-speed cooking!");
-				}
+				$this->lang("did");
 				break;
 
 			case "392":
 				$player->getInventory()->addItem(Item::get(393, 0, 1));
 				$player->getInventory()->removeItem(Item::get(392, 0, 1));
-				if($this->l == "jpn"){
-					$player->sendMessage("[§eTCQ§f] §6高速調理を行いました!");
-				}else{
-					$player->sendMessage("[§eTCQ§f] §6Did high-speed cooking!");
-				}
+				$this->lang("did");
 				break;
 
 			case "411":
 				$player->getInventory()->addItem(Item::get(412, 0, 1));
 				$player->getInventory()->removeItem(Item::get(411, 0, 1));
-				if($this->l == "jpn"){
-					$player->sendMessage("[§eTCQ§f] §6高速調理を行いました!");
-				}else{
-					$player->sendMessage("[§eTCQ§f] §6Did high-speed cooking!");
-				}
+				$this->lang("did");
 				break;
 
 			case "423":
 				$player->getInventory()->addItem(Item::get(424, 0, 1));
 				$player->getInventory()->removeItem(Item::get(423, 0, 1));
-				if($this->l == "jpn"){
-					$player->sendMessage("[§eTCQ§f] §6高速調理を行いました!");
-				}else{
-					$player->sendMessage("[§eTCQ§f] §6Did high-speed cooking!");
-				}
+				$this->lang("did");
 				break;
 
 			case "349":
 				$player->getInventory()->addItem(Item::get(350, 0, 1));
 				$player->getInventory()->removeItem(Item::get(349, 0, 1));
-				if($this->l == "jpn"){
-					$player->sendMessage("[§eTCQ§f] §6高速調理を行いました!");
-				}else{
-					$player->sendMessage("[§eTCQ§f] §6Did high-speed cooking!");
-				}
+				$this->lang("did");
 				break;
 			}
 		}
 	}
 
 }
-
+public function lang($phrase){
+		$lang = $this->getConfig()->get("Use_language");
+        $urlh = file_get_contents("https://raw.githubusercontent.com/PMpluginMaker-Team/ToCookQuickly/lang/lang/{$lang}.json"); 
+        $url = json_decode($urlh, true); 
+        return $url["{$phrase}"];
+		}
 }
