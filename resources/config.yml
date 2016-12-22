@@ -1,14 +1,13 @@
 ## ToCookQuickly's config file. ##
 
-# Please select the language you use.("eng" or "jpn")
-# 使用する言語を選択してください。("eng" or "jpn")
-
+#↓Пожалуйста выберете язык доступно. ("eng", "jpn", "rus")
+#↓Please select the language you use.("eng", "jpn", "rus")
+#↓使用する言語を選択してください。("eng", "jpn", "rus")
 Use_language: eng
 
-
-# Please set the ID of the block to be used for high speed cooking. (The default is 153)
-# 高速調理を実行するブロックのIDを指定してください。(デフォルトでは 153 に設定されています。)
-
+#↓Пожалуйста укажите id блокана которомбудетпроходить быстрая приготовка. (По умолчанию 153)   
+#↓Please set the ID of the block to be used for high speed cooking. (The default is 153)
+#↓高速調理を実行するブロックのIDを指定してください。(デフォルトでは 153 に設定されています。)
 Cooking_block: 153
 
 
