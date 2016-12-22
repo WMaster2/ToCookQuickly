@@ -1,0 +1,18 @@
+## ToCookQuickly's config file. ##
+
+# Please select the language you use.("eng" or "jpn")
+# 使用する言語を選択してください。("eng" or "jpn")
+
+Use_language: eng
+
+
+# Please set the ID of the block to be used for high speed cooking. (The default is 153)
+# 高速調理を実行するブロックのIDを指定してください。(デフォルトでは 153 に設定されています。)
+
+Cooking_block: 153
+
+
+# All rights of this plugin are in gigantessbeta and PMpluginMaker-Team.
+# The act of modifying or redistributing this plug-in is not permitted.
+# このプラグインの全ての権利はgiantessbeta と PMpluginMaker-Teamにあります。
+# このプラグインを改変、再配布を行う行為は禁止です。
