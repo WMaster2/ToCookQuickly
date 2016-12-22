@@ -20,6 +20,17 @@ public function onEnable(){
 		$this->reloadConfig();
 		$this->l = $this->getConfig()->get("Use_language");
 		$this->b = $this->getConfig()->get("Cooking_block");
+		if($this->l == "jpn"){
+			$this->getLogger()->info("§bToCookQuicklyプラグインをご利用いただき、ありがとうございます。");
+			$this->getLogger()->info("§b不具合などが生じた際は、連絡をお願いします。");
+			$this->getLogger()->info("§c 二次配布、改造配布は禁止です。 §6製作者gigantessbeta(みやりん)");
+		}else{
+			$this->getLogger()->info("§bThank you for using ToCookQuickly plugin");
+			$this->getLogger()->info("§bPlease contact us when troubles occur.");
+			$this->getLogger()->info("§c Secondary distribution, Modification Distribution is prohibited. §6 Producer:gigantessbeta(みやりん)");
+}
+
+	
 }
 
 public function onTap(PlayerInteractEvent $event){
