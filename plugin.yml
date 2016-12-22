@@ -1,6 +1,7 @@
 name: ToCookQuickly
 main: TCQ\Main
-version: 0.0.2
+version: 0.0.3
 api: [2.0.0]
 load: POSTWORLD
 author: gigantessbeta
+website: https://github.com/PMpluginMaker-Team/ToCookQuickly
