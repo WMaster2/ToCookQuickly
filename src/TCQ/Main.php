@@ -20,7 +20,7 @@ public function onEnable(){
 		$this->reloadConfig();
 		$this->l = $this->getConfig()->get("Use_language");
 		$this->b = $this->getConfig()->get("Cooking_block");
-		$this->lang("start");
+		$this->getLogger()->notice($this->lang("start"));
 	
 }
 
@@ -80,8 +80,18 @@ public function onTap(PlayerInteractEvent $event){
 }
 public function lang($phrase){
 		$lang = $this->getConfig()->get("Use_language");
-        $urlh = file_get_contents("https://raw.githubusercontent.com/PMpluginMaker-Team/ToCookQuickly/lang/lang/{$lang}.json"); 
+        $urlh = $this->curl_get_contents("https://raw.githubusercontent.com/PMpluginMaker-Team/ToCookQuickly/lang/lang/{$lang}.json"); 
         $url = json_decode($urlh, true); 
         return $url["{$phrase}"];
 		}
+public function curl_get_contents($url){
+  $curl = curl_init($url);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+  curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+  $data = curl_exec($curl);
+  curl_close($curl);
+  return $data;
+}
 }
