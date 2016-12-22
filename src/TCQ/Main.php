@@ -27,7 +27,7 @@ public function onEnable(){
 		}else{
 			$this->getLogger()->info("§bThank you for using ToCookQuickly plugin");
 			$this->getLogger()->info("§bPlease contact us when troubles occur.");
-			$this->getLogger()->info("§c Secondary distribution, Modification Distribution is prohibited. §6 Producer:gigantessbeta(みやりん)");
+			$this->getLogger()->info("§c Secondary distribution, Modification Distribution is prohibited. §6 Author:gigantessbeta(みやりん)");
 }
 
 	
